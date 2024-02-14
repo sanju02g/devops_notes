@@ -1,0 +1,28 @@
+stage('Building Win64, Linux764, MacOS') {
+  parallel {
+    stage('Win64') {
+      agent {
+        label 'win-10-x64'
+      }
+      steps {
+      ...
+      }
+    }
+    stage('Linux64') {
+      agent {
+        label 'linux-x64'
+      }
+      steps {
+      ...
+      }
+    }
+    stage('MacOS') {
+      agent {
+        label 'macos'
+      }
+      steps {
+      ...
+      }
+    }
+  }
+}
